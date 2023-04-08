@@ -3,7 +3,8 @@ package cordova.plugin.openoverlaypermission;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
-import leumit.mobile.BuildConfig;
+// import Your app *.BuildConfig file here
+// import *.BuildConfig;
 import leumit.mobile.MainActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,7 +23,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import android.content.Context;
 import android.app.Activity;
-import leumit.mobile.MainActivity;
+// import Your app *.MainActivity file here
+// import *.MainActivity;
 import android.util.Log;
 /**
  * This class echoes a string called from JavaScript.
@@ -32,8 +34,8 @@ final Integer RequestCode = 9999;
 public static CallbackContext mCallbackContext;
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        Log.i("LeumitMobile",  "**** Build.VERSION.SDK_INT: " + Build.VERSION.SDK_INT + "****");
-        Log.i("LeumitMobile",  "**** Build.MANUFACTURER: " + Build.MANUFACTURER + "****");
+        Log.i("cordova-plugin-open-overlay-permission",  "**** Build.VERSION.SDK_INT: " + Build.VERSION.SDK_INT + "****");
+        Log.i("cordova-plugin-open-overlay-permission",  "**** Build.MANUFACTURER: " + Build.MANUFACTURER + "****");
 
         mCallbackContext = callbackContext;
 
@@ -93,7 +95,7 @@ public static CallbackContext mCallbackContext;
                     Uri.parse("package:" + BuildConfig.APPLICATION_ID));
             cordova.setActivityResultCallback(this);
             cordova.getActivity().startActivityForResult(intent, RequestCode);
-            Log.i("LeumitMobile",  "****after cordova.startActivityForResult****");
+            Log.i("cordova-plugin-open-overlay-permission",  "****after cordova.startActivityForResult****");
         }
     }
 
@@ -125,7 +127,7 @@ public static CallbackContext mCallbackContext;
             }
         }
 
-        Log.i("LeumitMobile",  "getSystemProperty -> line: " + line);
+        Log.i("cordova-plugin-open-overlay-permission",  "getSystemProperty -> line: " + line);
         return line;
     }
 
