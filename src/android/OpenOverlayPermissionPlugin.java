@@ -5,7 +5,6 @@ import org.apache.cordova.CallbackContext;
 
 // import Your app *.BuildConfig file here
 // import *.BuildConfig;
-import leumit.mobile.MainActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
