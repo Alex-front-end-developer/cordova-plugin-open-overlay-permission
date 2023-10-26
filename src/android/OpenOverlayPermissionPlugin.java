@@ -3,8 +3,6 @@ package cordova.plugin.openoverlaypermission;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
-// import Your app *.BuildConfig file here
-// import *.BuildConfig;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,8 +20,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import android.content.Context;
 import android.app.Activity;
-// import Your app *.MainActivity file here
-// import *.MainActivity;
 import android.util.Log;
 /**
  * This class echoes a string called from JavaScript.
@@ -91,7 +87,7 @@ public static CallbackContext mCallbackContext;
 		// Open android 10 overlay permission
         else {
             Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                    Uri.parse("package:" + BuildConfig.APPLICATION_ID));
+                    Uri.parse("package:" + cordova.getActivity().getPackageName()));
             cordova.setActivityResultCallback(this);
             cordova.getActivity().startActivityForResult(intent, RequestCode);
             Log.i("cordova-plugin-open-overlay-permission",  "****after cordova.startActivityForResult****");
