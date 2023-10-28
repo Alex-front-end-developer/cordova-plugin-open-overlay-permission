@@ -62,7 +62,11 @@ public static CallbackContext mCallbackContext;
                 canDrawOverlays = Settings.canDrawOverlays(cordova.getActivity().getApplicationContext());
             }
 
-            callbackContext.success(String.valueOf(canDrawOverlays));
+            if (canDrawOverlays) {
+                callbackContext.success(String.valueOf(canDrawOverlays));
+            } else {
+                callbackContext.error(String.valueOf(canDrawOverlays));
+            }
 
             return true;
         }
